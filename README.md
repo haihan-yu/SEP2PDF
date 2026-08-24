@@ -6,7 +6,7 @@ SEP2PDF is a standalone Codex skill that downloads a current or archived [Stanfo
 
 ## Preview
 
-The following uncropped pages come from the skill's validated rendering of [“Preferences”](https://plato.stanford.edu/entries/preferences/) (revision dated 14 March 2022).
+The following pages come from the skill's validated rendering of [“Preferences”](https://plato.stanford.edu/entries/preferences/) (revision dated 14 March 2022).
 
 ![Complete title page of the Preferences PDF](docs/images/preferences-title.png)
 
