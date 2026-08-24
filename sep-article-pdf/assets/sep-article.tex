@@ -1,0 +1,54 @@
+\documentclass[letterpaper,11pt,leqno]{article}
+\usepackage{sep-paper}
+
+@@MATH_MACROS@@
+
+\hypersetup{
+  pdftitle={@@PDF_TITLE@@},
+  pdfauthor={@@PDF_AUTHORS@@},
+  pdfsubject={Stanford Encyclopedia of Philosophy entry; @@CANONICAL_URL_RAW@@},
+  pdfkeywords={Stanford Encyclopedia of Philosophy, @@REVISION_DATE@@}
+}
+
+\begin{document}
+
+\title{@@TITLE@@}
+\author{@@AUTHORS@@}
+\date{}
+\paperurl{@@CANONICAL_URL_RAW@@}
+
+\begin{titlepage}
+\maketitle
+
+\begin{sepmetadata}
+\textsc{Stanford Encyclopedia of Philosophy}\par
+@@PUBLICATION_HISTORY@@\par
+Accessed @@ACCESS_DATE@@\par
+\url{@@CANONICAL_URL_RAW@@}
+\end{sepmetadata}
+
+\vspace{1.5em}
+@@PREAMBLE@@
+\end{titlepage}
+
+\clearpage
+\tableofcontents
+\clearpage
+
+@@ARTICLE_BODY@@
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Copyright and source}
+\section*{Copyright and source}
+
+@@COPYRIGHT@@
+
+\medskip
+This article was downloaded from the \emph{Stanford Encyclopedia of Philosophy},
+published by the Metaphysics Research Lab, Department of Philosophy,
+Stanford University. ISSN 1095-5054. The wording of the scholarly entry is
+preserved; the document design and format conversion are not an official SEP
+publication.
+
+\end{document}

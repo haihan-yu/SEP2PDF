@@ -1,0 +1,118 @@
+% SEP article style derived from Pascal Michaillat's latex-paper template.
+% The template is MIT licensed; see LICENSE-latex-paper.md.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sep-paper}[2026/08/22 SEP article PDF style]
+
+\RequirePackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+  \RequirePackage[T1]{fontenc}
+\fi
+
+\RequirePackage{sourceserifpro}
+\RequirePackage{sourcecodepro}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{MnSymbol}
+% Boondox supplies lowercase blackboard-bold glyphs used by some SEP entries.
+\RequirePackage[cal=euler,bb=boondox]{mathalpha}
+\newcommand{\hmmax}{0}
+\newcommand{\bmmax}{0}
+\RequirePackage{bm}
+\RequirePackage[italic,eulergreek,nolessnomore,noparenthesis,noplusnominus,noequal,nohbar]{mathastext}
+\MTsetmathskips{f}{3mu}{0mu}
+\MTsetmathskips{y}{2mu}{0mu}
+\MTsetmathskips{p}{2mu}{0mu}
+\MTsetmathskips{j}{2mu}{0mu}
+
+\RequirePackage[top=1in,left=1.3in,right=1.3in,bottom=1.2in,footskip=0.7in]{geometry}
+\RequirePackage[onehalfspacing]{setspace}
+\RequirePackage{microtype}
+\setlength{\emergencystretch}{3em}
+\AtBeginDocument{\frenchspacing}
+
+\RequirePackage[x11names]{xcolor}
+\definecolor{SEPCardinal}{HTML}{8C1515}
+\definecolor{SEPWarmGray}{HTML}{5F574F}
+
+\RequirePackage{etoolbox}
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\thepage}}
+
+\RequirePackage{titling}
+\pretitle{\begin{center}\color{SEPCardinal}\bfseries\Huge}
+\posttitle{\par\end{center}\vspace{1em}}
+\preauthor{\begin{center}\large\begin{tabular}[t]{c}}
+\postauthor{\end{tabular}\par\end{center}}
+\predate{\begin{center}}
+\postdate{\par\end{center}}
+
+\NewDocumentCommand{\paperurl}{m}{%
+  \fancypagestyle{plain}{\fancyfoot[C]{\color{gray}\footnotesize Available at \url{#1}}}%
+  \AtBeginEnvironment{titlepage}{\pagestyle{plain}}}
+
+\newenvironment{sepmetadata}
+  {\begin{center}\color{SEPWarmGray}\small\setlength{\parskip}{0.35em}}
+  {\end{center}}
+
+\RequirePackage{tocloft}
+\renewcommand{\contentsname}{Contents}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftdotsep}{10}
+\setlength{\cftbeforesecskip}{0.15em}
+
+\RequirePackage{titlesec}
+\titleformat*{\section}{\centering\large\color{SEPCardinal}\bfseries}
+\titleformat*{\subsection}{\color{SEPWarmGray}\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[\@addpunct{.}\hspace{1em}]
+\titlespacing*{\section}{0pt}{2.8em}{1.2em}
+\titlespacing*{\subsection}{0pt}{2em}{0.75em}
+\titlespacing*{\subsubsection}{0pt}{1.5em}{0.5em}
+
+\RequirePackage{graphicx}
+\RequirePackage[export]{adjustbox}
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{longtable}
+\RequirePackage{tabularx}
+\RequirePackage{tabularray}
+\UseTblrLibrary{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{makecell}
+\RequirePackage{rotating}
+\RequirePackage{pdflscape}
+\renewcommand{\arraystretch}{1.2}
+
+\RequirePackage{caption}
+\captionsetup{labelsep=period,font=small,labelfont=sc}
+\newcommand{\sepfigurelabel}[1]{\par\smallskip{\small\color{SEPWarmGray}\textsc{#1}}\par}
+
+\RequirePackage{enumitem}
+\setlist[itemize,1]{leftmargin=\parindent,label=\color{gray}{\textbullet},topsep=0.5em,itemsep=0.35em,parsep=0pt}
+\setlist[itemize,2]{leftmargin=2\parindent,label=\color{gray}{\textendash},topsep=0.25em,itemsep=0.25em,parsep=0pt}
+\setlist[enumerate,1]{leftmargin=\parindent,topsep=0.5em,itemsep=0.35em,parsep=0pt}
+\setlist[enumerate,2]{leftmargin=2\parindent,topsep=0.25em,itemsep=0.25em,parsep=0pt}
+\setlist[description]{style=nextline,leftmargin=2.5em,labelindent=0pt,font=\normalfont\bfseries,topsep=0.5em,itemsep=0.35em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\RequirePackage[bottom,hang]{footmisc}
+\setlength{\footnotemargin}{1em}
+\interfootnotelinepenalty=10000
+\AtBeginDocument{\allowdisplaybreaks[1]}
+
+\PassOptionsToPackage{hyphens}{url}
+\RequirePackage{xurl}
+\RequirePackage[hidelinks,hypertexnames=false,pdfpagemode=UseOutlines,pdfdisplaydoctitle=true]{hyperref}
+\RequirePackage{bookmark}
+
+\endinput

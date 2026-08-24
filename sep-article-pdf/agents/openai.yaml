@@ -1,0 +1,6 @@
+interface:
+  display_name: "SEP Article PDF"
+  short_description: "Download SEP articles as polished PDFs"
+  default_prompt: "Use $sep-article-pdf to download this Stanford Encyclopedia of Philosophy article as a polished, verified PDF."
+policy:
+  allow_implicit_invocation: true
