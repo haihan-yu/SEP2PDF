@@ -62,4 +62,4 @@ By default, the skill places one descriptively named PDF in the current task fol
 
 > **Important:** Generated PDFs must be used in accordance with the [SEP Terms of Use](https://plato.stanford.edu/info.html#c). Public electronic redistribution is restricted. Keep each entry's author copyright, attribution, citation information, and source URL intact.
 
-This repository does not redistribute generated PDFs or SEP article content. SEP2PDF's original code is released under the [MIT License](LICENSE), copyright © 2026 Haihan Yu. Its document design adapts Pascal Michaillat's [`latex-paper`](https://github.com/pmichaillat/latex-paper); see [Third-Party Notices](THIRD_PARTY_NOTICES.md) and the [preserved MIT license](sep-article-pdf/assets/LICENSE-latex-paper.md).
+ SEP2PDF's original code is released under the [MIT License](LICENSE). Its document design adapts Pascal Michaillat's [`latex-paper`](https://github.com/pmichaillat/latex-paper).
